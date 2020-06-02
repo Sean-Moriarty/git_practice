@@ -7,4 +7,19 @@ my_int = 42
 my_float = 3.14
 my_bool = True
 
+#bubble sort 6/1/20
+# I'm not sure if this is the best way to do this in python
+# but this is how I learned to do this in Java, JavaScript
+# and I think this is how I did this in Ruby
+def bubble_sort(my_list):
+    for i in range(len(my_list) - 1):
+        for j in range(len(my_list) - 1):
+            if my_list[j] > my_list[j + 1]:
+                temp = my_list[j]
+                my_list[j] = my_list[j + 1]
+                my_list[j + 1] = temp
+    return my_list
 
+my_list = [5, 3, 22, 14, 1, 7]
+sorted_list = bubble_sort(my_list)
+print(sorted_list)
