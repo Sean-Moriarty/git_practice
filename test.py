@@ -23,3 +23,12 @@ def bubble_sort(my_list):
 my_list = [5, 3, 22, 14, 1, 7]
 sorted_list = bubble_sort(my_list)
 print(sorted_list)
+
+#function returning function
+def make_function(num):
+    def made_function(num):
+        print("This function is brought to you by the number {num}".format(num=num))
+    return made_function
+
+new_function = make_function(42)
+new_function(6)
