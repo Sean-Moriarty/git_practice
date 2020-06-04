@@ -32,3 +32,28 @@ def make_function(num):
 
 new_function = make_function(42)
 new_function(6)
+
+# this is a better example of a function returning function
+# also utilizes a homemade switch statement, since those don't
+# exist in python (use dict and return dict.get(arg=key))
+def get_math_function(operation):
+    def add(num1, num2):
+        return num1 + num2
+    def sub(num1, num2):
+        return num1 - num2
+    def mul(num1, num2):
+        return num1 * num2
+    def div(num1, num2):
+        return num1 / num2
+    
+    switch = {
+        "+": add,
+        "-": sub,
+        "*": mul,
+        "/": div
+    }
+    
+    return switch.get(operation, "Invalid Operation")
+
+add_func = get_math_function("+")
+print(add_func(3, 2))
